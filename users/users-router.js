@@ -2,9 +2,9 @@ const router = require("express").Router();
 
 const Users = require("./users-model.js");
 
-
 router.get("/", (req, res) => {
-  Users.find()
+  const department = req.decodedToken.department
+  Users.findByDepartment(department)
     .then(users => {
       res.json(users);
     })

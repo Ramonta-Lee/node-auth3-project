@@ -48,7 +48,7 @@ function generateToken(user) {
   const payload = {
     subject: user.id, // "sub" property
     username: user.username,
-    department: user.department 
+    department: user.department
     // ...other data
   };
   // const secret = process.env.JWT_SECRET || "keep it secret, keep it safe"

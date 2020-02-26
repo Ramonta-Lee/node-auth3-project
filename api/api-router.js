@@ -10,17 +10,9 @@ const restricted = require("../auth/restricted-middleware.js");
 router.use("/auth", authRouter);
 router.use("/users", restricted, usersRouter);
 
-// Example of how to hash passwords from the headers.
-// router.get("/hash", (req, res) => {
-//   const authentication = req.headers.authentication;
-
-//   const hash = bcrypt.hashSync(authentication, 13);
-
-//   res.json({ originalValue: authentication, hashedValue: hash });
-// });
 
 router.get("/", (req, res) => {
-  res.json({ api: "router working" });
+  res.json({ api: "api endpoint is working" });
 });
 
 module.exports = router;
